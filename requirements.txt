@@ -1,0 +1,30 @@
+# ============================================================
+# Requirements for: Benchmarking SAITS for Sparse
+# Epidemiological Morbidity Data with Downstream Forecasting
+# ------------------------------------------------------------
+# Python 3.10 - 3.13 recommended.
+# Install with:   pip install -r requirements.txt
+#
+# Note: pypots pulls in PyTorch automatically, but torch is
+# listed explicitly because the Bi-LSTM forecaster uses it
+# directly. On some systems you may prefer to install the
+# correct torch build first (see https://pytorch.org).
+# ============================================================
+
+# --- Core data handling ---
+numpy>=1.24,<2.2
+pandas>=2.0
+
+# --- Machine learning / imputation ---
+scikit-learn>=1.3        # SimpleImputer, IterativeImputer (MICE), scalers
+scipy>=1.10              # scipy.stats.entropy (KL-Divergence metric)
+pypots>=0.7              # provides SAITS (Self-Attention Imputation)
+torch>=2.0               # Bi-LSTM forecaster and SAITS backend
+
+# --- Visualization ---
+matplotlib>=3.7
+seaborn>=0.12
+
+# --- Notebook environment ---
+jupyter>=1.0
+ipykernel>=6.0
